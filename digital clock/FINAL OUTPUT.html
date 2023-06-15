@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)file:///C:/Users/kowsa/OneDrive/Desktop/digital%20clock/OUTPUT%20IMAGE%201.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="2.css">
+</head>
+<body>
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext"></div>
+  <img src="./FINAL OUTPUT_files/image1.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext"></div>
+  <img src="./FINAL OUTPUT_files/image3.png" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade" style="display: block;">
+  <div class="numbertext"></div>
+  <img src="./FINAL OUTPUT_files/image8.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot active"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); 
+}
+</script>
+<div id="time">7:12:21</div>
+    <script type="text/javascript">
+    
+    function update(){
+    var a=new Date();
+    
+    document.getElementById("time").innerText=a.getHours()+":"+a.getMinutes()+":"+a.getSeconds();
+    
+    }
+    window.setInterval(update,1000);
+    update();
+        </script>
+
+
+ 
+</body></html>
